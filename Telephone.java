@@ -10,6 +10,15 @@ public class Telephone
    // strings that are formatted and unformatted.
    public final static int FORMATTED_LENGTH = 13;
    public final static int UNFORMATTED_LENGTH = 10;
+ 
+   // These constant fields hold the input and
+   // proper output values for testing isFormatted
+   private final String testInput1 = "7174443344";
+   private final String testInput2 = "(717)4443344";
+   private final String testInput3 = "(717)444-3344";
+   private final boolean testOutput1 = false;
+   private final boolean testOutput2 = false;
+   private final boolean testOutput3 = true;
    
    /**
     * The isFormatted method accepts a string argument
@@ -35,6 +44,14 @@ public class Telephone
       
       // Return the value of the valid flag.
       return valid;
+   }
+  
+   //this function has 3 test cases for the isFormatted method
+   @Test
+   public void testIsFormatted() {
+      assertEquals(isFormatted(testInput1), testOutput1);
+      assertEquals(isFormatted(testInput2), testOutput2);
+      assertEquals(isFormatted(testInput3), testOutput3);
    }
    
    /**
